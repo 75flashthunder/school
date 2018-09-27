@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 public class TestController {
-    @RequestMapping(value = "/helloworld", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/hello", method = RequestMethod.GET, produces = "application/json")
     public String helloWorld(){
-        return "helloWorld";
+        return "hello";
     }
 }
