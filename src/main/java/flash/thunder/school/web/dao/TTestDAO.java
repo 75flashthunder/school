@@ -17,8 +17,10 @@ public class TTestDAO {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    public List<TTest> select (){
-        String sql="SELECT * FROM t_test WHERE id=1;";
-        return jdbcTemplate.query(sql,new BeanPropertyRowMapper<>(TTest.class));
+    public boolean select (TTest tTest){
+        String sql="SELECT * FROM t_test WHERE name = '%1$s' AND password = '%2$s';";
+        String formatsql=String.format(sql,tTest.getName(),tTest.getPassword());
+        List<TTest> t=jdbcTemplate.query(formatsql,new BeanPropertyRowMapper<>(TTest.class));
+        return t.size()>0? true:false;
     }
 }

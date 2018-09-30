@@ -6,9 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * Created by Administrator on 2018/8/7.
@@ -28,9 +26,11 @@ public class WebController {
         return "house";
     }
 
-    @RequestMapping(value = "/mysqltest", method = RequestMethod.GET, produces = "application/json")
-    @ResponseBody
-    public List<TTest> mysqltest(){
-        return mysqlTestService.select();
+    @RequestMapping(value = "/mysqltest", method = RequestMethod.POST, produces = "application/json")
+    public String mysqltest(@RequestParam String name, @RequestParam String password){
+        TTest test=new TTest();
+        test.setName(name);
+        test.setPassword(password);
+        return mysqlTestService.select(test)? "index":"";
     }
 }

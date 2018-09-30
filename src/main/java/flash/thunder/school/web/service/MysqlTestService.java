@@ -5,8 +5,6 @@ import flash.thunder.school.web.entity.TTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 /**
  * Created by Administrator on 2018/9/28.
  */
@@ -14,7 +12,7 @@ import java.util.List;
 public class MysqlTestService {
     @Autowired
     private TTestDAO tTestDAO;
-    public List<TTest> select(){
-       return tTestDAO.select();
+    public boolean select(TTest tTest){
+       return tTestDAO.select(tTest);
     }
 }
