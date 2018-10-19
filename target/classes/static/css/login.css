@@ -10,6 +10,7 @@ body{
     font-family: 'Open Sans',sans-serif;
     margin: 0;
     background-color: #4A374A;
+    overflow:scroll;
 }
 #login{
     position: absolute;
@@ -56,5 +57,5 @@ input{
     font-size: 15px;
     line-height: normal;
     border-radius: 5px;
-    margin: 0;
+    margin-bottom: 10px;
 }

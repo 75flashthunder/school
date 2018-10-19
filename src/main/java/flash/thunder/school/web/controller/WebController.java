@@ -21,8 +21,13 @@ public class WebController {
         return "login";
     }
 
+    @RequestMapping(value = "/register", method = RequestMethod.GET, produces = "application/json")
+    public String register(){
+        return "register";
+    }
+
     @RequestMapping(value = "/house", method = RequestMethod.POST, produces = "application/json")
-    public String mainPage(){
+    public String house(){
         return "house";
     }
 
