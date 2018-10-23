@@ -2,11 +2,8 @@ package flash.thunder.school.web.dao;
 
 import flash.thunder.school.web.entity.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
 
 
 /**
@@ -18,9 +15,16 @@ public class UserDAO {
     private JdbcTemplate jdbcTemplate;
 
     public boolean insert (UserEntity user){
-        String sql="SELECT * FROM t_test WHERE name = '%1$s' AND password = '%2$s';";
-        String formatsql=String.format(sql,user.getName(),user.getPassword());
-        List<UserEntity> t=jdbcTemplate.query(formatsql,new BeanPropertyRowMapper<>(UserEntity.class));
-        return t.size()>0? true:false;
+//        String sql="insert into t_bond_portfolio_auth_mapping (auth_type, create_time, source_id, source_type, tree_order, user_id) values (?,?,?,?,?,?)";
+//        //  String formatSql = String.format(sql.toString(),authMapping.getAuthType(),authMapping.getCreateTime(),authMapping.getSourceId(),authMapping.getSourceType(),authMapping.getTreeOrder(),authMapping.getUserId());
+//
+//        return jdbcTemplate.update(sql, (x)->{
+//            x.setInt(1,authMapping.getAuthType());
+//            x.setTimestamp(2,new java.sql.Timestamp(authMapping.getCreateTime().getTime()));
+//            x.setLong(3,authMapping.getSourceId());
+//            x.setInt(4,authMapping.getSourceType());
+//            x.setInt(5,authMapping.getTreeOrder());
+//            x.setInt(6,authMapping.getUserId());});
+        return true;
     }
 }
