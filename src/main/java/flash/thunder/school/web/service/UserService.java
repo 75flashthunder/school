@@ -12,7 +12,12 @@ import org.springframework.stereotype.Service;
 public class UserService {
     @Autowired
     private UserDAO userDAO;
-    public boolean insert(UserEntity user){
-       return userDAO.insert(user);
+    public int insert(UserEntity user){
+        user.setSchoolId(0);
+        user.setDepartmentId(0);
+        user.setMajorId(0);
+        user.setUpdateUserId(0L);
+        user.setIsDelete((short) 0);
+        return userDAO.insert(user);
     }
 }

@@ -10,20 +10,20 @@
 <body>
 <div id="login">
     <h1>注册</h1>
-    <form method="post" action="/mysqltest">
+    <form id="register_content">
         <input type="text" required="required" placeholder="用户名" name="name"></input>
-        <input type="password" required="required" placeholder="密码" name="password"></input>
+        <input type="password" required="required" placeholder="密码" name="password" minlength="6"></input>
         <input type="email" required="required" placeholder="邮箱" name="email"></input>
-        <input type="number" required="required" placeholder="手机" name="phone"></input>
+        <input type="number" required="required" placeholder="手机" name="phone" size="13"></input>
         <input type="text" required="required" placeholder="学校" name="school"></input>
-        <input type="password" required="required" placeholder="院系" name="department"></input>
-        <input type="email" required="required" placeholder="专业" name="major"></input>
-        <input type="number" required="required" placeholder="工作地区" name="local"></input>
+        <input type="text" required="required" placeholder="院系" name="department"></input>
+        <input type="text" required="required" placeholder="专业" name="major"></input>
+        <input type="text" required="required" placeholder="工作地区" name="local"></input>
         <input type="text" required="required" placeholder="性别" name="gender"></input>
-        <input type="password" required="required" placeholder="毕业日期" name="graduateDate"></input>
-        <input type="email" required="required" placeholder="公司名称" name="companyName"></input>
+        <input type="date" required="required" placeholder="毕业日期" name="graduateDate"></input>
+        <input type="text" required="required" placeholder="公司名称" name="companyName"></input>
         <input type="number" required="required" placeholder="qq" name="qq"></input>
-        <button class="but" type="submit" onclick="">注册</button>
+        <button class="but" onclick="goRegister()">注册</button>
     </form>
 </div>
 </body>

@@ -52,7 +52,7 @@ public class UserEntity implements Serializable {
     @Column(name = "update_user_id")
     private Long updateUserId;
     @ApiModelProperty(value = "逻辑删除")
-    @Column(name = "id_delete")
+    @Column(name = "delete_flag")
     private Short isDelete;
     @ApiModelProperty(value = "性别")
     @Column(name = "gender")
