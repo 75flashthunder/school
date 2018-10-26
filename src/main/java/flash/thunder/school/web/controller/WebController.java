@@ -1,7 +1,7 @@
 package flash.thunder.school.web.controller;
 
-import flash.thunder.school.web.entity.TTest;
-import flash.thunder.school.web.service.MysqlTestService;
+import flash.thunder.school.web.entity.UserEntity;
+import flash.thunder.school.web.service.WebService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class WebController {
     @Autowired
-    private MysqlTestService mysqlTestService;
+    private WebService webService;
 
     @RequestMapping(value = "/login", method = RequestMethod.GET, produces = "application/json")
     public String login(){
@@ -31,11 +31,11 @@ public class WebController {
         return "house";
     }
 
-    @RequestMapping(value = "/mysqltest", method = RequestMethod.POST, produces = "application/json")
+    @RequestMapping(value = "/login/check", method = RequestMethod.POST, produces = "application/json")
     public String mysqltest(@RequestParam String name, @RequestParam String password){
-        TTest test=new TTest();
-        test.setName(name);
-        test.setPassword(password);
-        return mysqlTestService.select(test)? "index":"";
+        UserEntity user=new UserEntity();
+        user.setName(name);
+        user.setPassword(password);
+        return webService.select(user)? "index":"";
     }
 }

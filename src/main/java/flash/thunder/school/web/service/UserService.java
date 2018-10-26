@@ -13,7 +13,7 @@ public class UserService {
     @Autowired
     private UserDAO userDAO;
     public int insert(UserEntity user){
-        user.setSchoolId(0);
+        user.setSchoolId(117);
         user.setDepartmentId(0);
         user.setMajorId(0);
         user.setUpdateUserId(0L);

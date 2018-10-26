@@ -23,6 +23,6 @@ public class UserController {
     @ApiOperation(value = "注册用户")
     @RequestMapping(value = "/register", method = RequestMethod.POST, produces = "application/json")
     public String register(@RequestBody UserEntity user){
-        return userService.insert(user)>0? "index":"";
+        return userService.insert(user)==0? "index":"";
     }
 }
